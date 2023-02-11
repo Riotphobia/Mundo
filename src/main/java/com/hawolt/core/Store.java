@@ -133,7 +133,7 @@ public class Store implements IStore {
         MediaType type = MediaType.parse("application/json");
         RequestBody post = RequestBody.create(type, object.toString());
         Request request = new Request.Builder()
-                .url(String.format("https://euw.store.leagueoflegends.com/storefront/v3/refund", platform.translateToWebRegion()))
+                .url(String.format("https://%s.store.leagueoflegends.com/storefront/v3/refund", platform.translateToWebRegion()))
                 .addHeader("Authorization", String.format("Bearer %s", account.get("access_token")))
                 .post(post)
                 .build();
